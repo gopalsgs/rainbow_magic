@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:magic/Utils/UIUtils.dart';
 import 'package:magic/core/enums.dart';
 import 'package:magic/features/home/ui/models/rainbow_model.dart';
 import 'package:magic/main.dart';
@@ -47,64 +48,72 @@ class _VibgyorState extends State<Vibgyor> {
                   itemBuilder: (context, index){
 
                     var rainbowItem = colors[index];
-                    int textPosition = getTextPosition(rainbowItem, index);
+                    rainbowItem.position = getTextPosition(rainbowItem, index);
 
                     return Center(
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            height: 30,
-                            width: 200,
-                            color: rainbowItem.color,
-                          ),
-                          Container(
-                            height: 30,
-                            width: 200,
-                            child: AnimatedAlign(
-                              duration: Duration(milliseconds: 200),
-                              alignment: textPosition == 0 ? Alignment.centerLeft : Alignment.centerRight,
-                              curve: Curves.easeOut,
-                              child: Container(
-                                height: 30,
-                                width: 30,
-                                decoration: BoxDecoration(
-                                    color: Colors.grey
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    rainbowItem.code,
-                                    style: Theme.of(context).textTheme.caption,
+                      child: InkWell(
+                        onTap: EnvironmentConfig.BUNDLE_ID_SUFFIX == Const.PROD ? (){
+                          setState(() {
+                            rainbowItem.position = rainbowItem.position==0 ? 1: 0;
+                          });
+                          _checKAlignment();
+                        } : null,
+                        child: Stack(
+                          children: <Widget>[
+                            Container(
+                              height: 30,
+                              width: 200,
+                              color: rainbowItem.color,
+                            ),
+                            Container(
+                              height: 30,
+                              width: 200,
+                              child: AnimatedAlign(
+                                duration: Duration(milliseconds: 200),
+                                alignment: rainbowItem.position == 0 ? Alignment.centerLeft : Alignment.centerRight,
+                                curve: Curves.easeOut,
+                                child: Container(
+                                  height: 30,
+                                  width: 30,
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      rainbowItem.code,
+                                      style: Theme.of(context).textTheme.caption,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },
                 ),
               ),
 
-              Center(
-                child: Container(
-                  height: 210,
-                  width: 200,
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      splashColor: Colors.lightBlue.withOpacity(0.3),
-                      highlightColor: Colors.transparent,
-                      onTap: EnvironmentConfig.BUNDLE_ID_SUFFIX == Const.PROD
-                          ? (){if(!didWin){
-                        _shuffle();
-                      }}
-                          : null
-                      ,
-                    ),
-                  ),
-                ),
-              )
+//              Center(
+//                child: Container(
+//                  height: 210,
+//                  width: 200,
+//                  child: Material(
+//                    color: Colors.transparent,
+//                    child: InkWell(
+//                      splashColor: Colors.lightBlue.withOpacity(0.3),
+//                      highlightColor: Colors.transparent,
+//                      onTap: EnvironmentConfig.BUNDLE_ID_SUFFIX == Const.PROD
+//                          ? (){if(!didWin){
+//                        _shuffle();
+//                      }}
+//                          : null
+//                      ,
+//                    ),
+//                  ),
+//                ),
+//              )
             ],
           ),
         ),
@@ -176,4 +185,21 @@ class _VibgyorState extends State<Vibgyor> {
 
   }
 
+  void _checKAlignment() async {
+
+    bool isAllValueEqual = true;
+
+    for(int i=1; i < colors.length; i++){
+      isAllValueEqual = isAllValueEqual && colors[i-1].position == colors[i].position;
+      if(!isAllValueEqual) return;
+    }
+
+    var alignment = 'Right';
+    if(colors[0].position == 0) alignment = 'Left';
+    await Future.delayed(Duration(seconds: 1));
+    Navigator.push(context, MaterialPageRoute(builder: (_)=>QRDisplayPage(value: 'Success-$alignment Aligned',)));
+
+  }
+
 }
+
