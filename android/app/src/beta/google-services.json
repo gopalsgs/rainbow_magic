@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "537201582255",
+    "firebase_url": "https://rainbowmagic-8dfca.firebaseio.com",
+    "project_id": "rainbowmagic-8dfca",
+    "storage_bucket": "rainbowmagic-8dfca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537201582255:android:04fc83e2082fb03f01745a",
+        "android_client_info": {
+          "package_name": "com.grootan.magic.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537201582255-tmc7qpa0fge5b43067phuvbgcuf4qrie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0P_nOkdRYilk2XFQJ_xHungn78SpTKng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537201582255-tmc7qpa0fge5b43067phuvbgcuf4qrie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537201582255:android:4f9d289a4f6833a401745a",
+        "android_client_info": {
+          "package_name": "com.grootan.magic.prod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537201582255-tmc7qpa0fge5b43067phuvbgcuf4qrie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0P_nOkdRYilk2XFQJ_xHungn78SpTKng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537201582255-tmc7qpa0fge5b43067phuvbgcuf4qrie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
