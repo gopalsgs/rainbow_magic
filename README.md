@@ -14,7 +14,8 @@ A new Flutter application.
 
 ## Apk links
 
-- [Production app download link](https://drive.google.com/file/d/1KRUTKc7innyWyDpEmkVSEMZp9gkK8OhD/view?usp=sharing)
+- [Production app download link - (Single click on whole container)](https://drive.google.com/file/d/1KRUTKc7innyWyDpEmkVSEMZp9gkK8OhD/view?usp=sharing)
+- [Production app download link - (All colors are clickable individually)](https://drive.google.com/file/d/1nQ2Mmoy2KDjIfnxSzGH770uK2HxqP1T4/view?usp=sharing)
 - [Beta App Download link](https://drive.google.com/file/d/1UmS-Vhbr9YKadCj0CWkaWvDKEtXSy2c4/view?usp=sharing)
 
 
