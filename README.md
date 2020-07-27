@@ -1,16 +1,20 @@
-# magic
+# Magic Rainbow
 
 A new Flutter application.
 
-## Getting Started
+## Running and building App
 
-This project is a starting point for a Flutter application.
+- For poduction build 
 
-A few resources to get you started if this is your first Flutter project:
+```flutter build apk --dart-define=BUNDLE_ID_SUFFIX=prod --dart-define=APP_NAME=MagicRainbow --flavor prod```
+- For Beta build
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```flutter build apk --dart-define=BUNDLE_ID_SUFFIX=beta --dart-define=APP_NAME=MagicRainbow --flavor beta```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Apk links
+
+- [Production app download link](https://flutter.dev/docs/get-started/codelab)
+- [Beta App Download link](https://flutter.dev/docs/cookbook)
+
+
