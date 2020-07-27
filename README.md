@@ -14,7 +14,7 @@ A new Flutter application.
 
 ## Apk links
 
-- [Production app download link](https://flutter.dev/docs/get-started/codelab)
-- [Beta App Download link](https://flutter.dev/docs/cookbook)
+- [Production app download link](https://drive.google.com/file/d/1KRUTKc7innyWyDpEmkVSEMZp9gkK8OhD/view?usp=sharing)
+- [Beta App Download link](https://drive.google.com/file/d/1UmS-Vhbr9YKadCj0CWkaWvDKEtXSy2c4/view?usp=sharing)
 
 
